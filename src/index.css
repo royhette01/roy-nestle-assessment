@@ -284,13 +284,12 @@ body {
   margin-top: 8px;
 }
 
-/* Cover V1: dog paints above the poster type (Figma). Type sits slightly high for clearer top line. */
+/* Cover: stage uses page background (no white card behind type + dog). */
 .cover-hero {
-  border-radius: calc(var(--radius-card) + 4px);
-  background: #fff;
-  border: 1px solid rgba(45, 45, 45, 0.1);
-  box-shadow: var(--shadow);
-  overflow: hidden;
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  overflow: visible;
 }
 
 .cover-hero__stage {
@@ -299,10 +298,10 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: flex-end;
-  min-height: min(28vh, 240px);
+  min-height: min(42vh, 380px);
   padding: clamp(20px, 4vw, 28px) 20px 0;
-  overflow: hidden;
-  border-radius: calc(var(--radius-card) + 4px) calc(var(--radius-card) + 4px) 0 0;
+  overflow: visible;
+  background: transparent;
 }
 
 .cover-hero__type {
@@ -315,21 +314,25 @@ body {
   margin: 0;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: stretch;
   justify-content: flex-start;
   text-align: center;
   pointer-events: none;
-  padding: 0.05em 10px 36%;
+  padding: 0.05em 0 36%;
   box-sizing: border-box;
+  transform: scaleX(1.1);
+  transform-origin: center top;
 }
 
 .cover-hero__line {
   display: block;
+  width: 100%;
   font-family: var(--font-hero-poster);
   font-weight: 400;
-  font-size: clamp(2.75rem, 11vw, 5.75rem);
-  line-height: 0.98;
-  letter-spacing: 0.02em;
+  font-size: clamp(4.35rem, 19vw, 10rem);
+  line-height: 0.97;
+  letter-spacing: 0.12em;
+  word-spacing: 0.06em;
   text-transform: uppercase;
   color: var(--accent);
 }
@@ -337,9 +340,9 @@ body {
 .cover-hero__dog {
   position: relative;
   z-index: 2;
-  height: min(30vh, 240px);
+  height: min(36vh, 300px);
   width: auto;
-  max-width: min(78%, 280px);
+  max-width: min(90%, 340px);
   object-fit: contain;
   object-position: bottom center;
   display: block;
@@ -352,9 +355,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  border-top: 1px solid rgba(45, 45, 45, 0.08);
-  background: rgba(249, 248, 245, 0.35);
-  border-radius: 0 0 calc(var(--radius-card) + 4px) calc(var(--radius-card) + 4px);
+  background: transparent;
 }
 
 .text-link-btn {
@@ -613,22 +614,25 @@ body {
 
 @media (max-width: 1024px) {
   .cover-hero__stage {
-    min-height: min(26vh, 220px);
+    min-height: min(38vh, 340px);
     padding-top: clamp(16px, 3vw, 22px);
   }
 
   .cover-hero__type {
     top: 10px;
     padding-bottom: 28%;
+    transform: scaleX(1.08);
   }
 
   .cover-hero__line {
-    font-size: clamp(2.4rem, 14vw, 4.25rem);
+    font-size: clamp(3.85rem, 22vw, 7.5rem);
+    letter-spacing: 0.11em;
+    word-spacing: 0.05em;
   }
 
   .cover-hero__dog {
-    height: min(28vh, 220px);
-    max-width: min(85%, 260px);
+    height: min(36vh, 300px);
+    max-width: min(92%, 330px);
   }
 
   .main-grid {
