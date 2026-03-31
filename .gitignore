@@ -1,0 +1,21 @@
+# Dependencies & build
+node_modules
+dist
+
+# Local env (secrets, machine-specific)
+.env
+.env.*
+*.local
+
+# Vite
+.vite
+
+# Tests
+coverage
+
+# Tooling caches
+.eslintcache
+*.tsbuildinfo
+
+# OS
+.DS_Store
